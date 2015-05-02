@@ -419,12 +419,12 @@ bool dfs(vector<int>&A, vector<int>& B, vector<int>& C, vector<int>& D, set<int>
 			if (!flag)
 				cout << '?', ans += '?';
 		}
-		cout << "\n";
+		cout << endl;
 		if (checkAnswer(A, B, C, D)) {
-			cout << ans << " - correct!\n";
+			cout << ans << " - correct!" << endl;
 		}
 		else {
-			cout << ans << " - incorrect!\n";
+			cout << ans << " - incorrect!" << endl;
 		}
 		return true;
 	}
@@ -522,9 +522,11 @@ int d = 5;
 int magic228 = 25;
 
 int main() {
-	freopen("output4", "w", stdout);
-	for (int k = Start; k < 100; k+=2) {
 
+	freopen("output56D.txt", "w", stdout);
+
+	for (int k = Start; k < 100; ++k) {
+		//cin >> FirstToColor;
 		n = k;
 		init();
 		cout << "n = " << n << "\n";
@@ -538,6 +540,7 @@ int main() {
 		vector<int> D(n, MAYBE);
 
 		int firstNumbereToChoice = choice(A, B, C, D, availableQuadraples);
+		firstNumbereToChoice = 0;
 		cout << firstNumbereToChoice << "\n";
 		A[firstNumbereToChoice] = FALSE;
 		B[firstNumbereToChoice] = FALSE;
@@ -590,8 +593,9 @@ int main() {
 
 		if (!reduce(AA, BB, CC, DD, availableQuadraples2) || !dfs(AA, BB, CC, DD, availableQuadraples2))
 			cout << "\n no counter examples - FAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiL\n\n";
-		cout << "\n";
+		cout << endl;
 		cout << (clock() - t) / 1.0 / CLOCKS_PER_SEC << "\n";
+		cout << ans << endl;
 		//cout << ans << "\n";
 
 		//if (checkAnswer(AA, BB, CC, DD))
@@ -603,12 +607,10 @@ int main() {
 		//cout << tChoice << "\n";
 		//cout << tReduce << "\n";
 		//cout << tGlobalCheck << "\n";
-		ofstream out("output.txt");
-		out << ans << "\n";
 		ans.clear();
 		//	}
 	}
-	system("pause");
+	
 
 	return 0;
 }
